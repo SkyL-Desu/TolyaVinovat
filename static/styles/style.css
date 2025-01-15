@@ -1,0 +1,49 @@
+body {
+  background-color: black; /* Черный фон */
+  color: white; /* Белый текст */
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Высота на весь экран */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.animated-text {
+  font-size: 180px; /* Увеличенный размер шрифта */
+  opacity: 0; /* Начальная прозрачность */
+  transition: opacity 1s ease; /* Плавный переход для появления */
+}
+
+.flame-text {
+  font-size: 240px; /* Увеличенный размер шрифта */
+  opacity: 0; /* Начальная прозрачность */
+  transform: translateY(20px); /* Начальное смещение вниз */
+  animation: fadeInUp 6s 4s forwards, flame 1.5s infinite alternate; /* Анимация появления и огня */
+}
+
+/* Анимация появления снизу вверх */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Начальное смещение вниз */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Конечное положение */
+  }
+}
+
+/* Анимация огня */
+@keyframes flame {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(255, 140, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.5),
+      0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.5); /* Оранжевое и красное свечение */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 140, 0, 1), 0 0 20px rgba(255, 0, 0, 1),
+      0 0 25px rgba(255, 140, 0, 1), 0 0 30px rgba(255, 0, 0, 1); /* Яркое свечение */
+  }
+}
