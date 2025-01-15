@@ -8,19 +8,20 @@ body {
   height: 100vh; /* Высота на весь экран */
   margin: 0;
   font-family: Arial, sans-serif;
+  text-align: center; /* Центрирование текста */
 }
 
 .animated-text {
-  font-size: 180px; /* Увеличенный размер шрифта */
+  font-size: 140px; /* Увеличенный размер шрифта */
   opacity: 0; /* Начальная прозрачность */
   transition: opacity 1s ease; /* Плавный переход для появления */
 }
 
 .flame-text {
-  font-size: 240px; /* Увеличенный размер шрифта */
+  font-size: 160px; /* Увеличенный размер шрифта */
   opacity: 0; /* Начальная прозрачность */
   transform: translateY(20px); /* Начальное смещение вниз */
-  animation: fadeInUp 6s 4s forwards, flame 1.5s infinite alternate; /* Анимация появления и огня */
+  animation: fadeInUp 6s 4s forwards, flame 0.5s infinite alternate; /* Увеличено время анимации */
 }
 
 /* Анимация появления снизу вверх */
@@ -45,5 +46,26 @@ body {
   50% {
     text-shadow: 0 0 10px rgba(255, 140, 0, 1), 0 0 20px rgba(255, 0, 0, 1),
       0 0 25px rgba(255, 140, 0, 1), 0 0 30px rgba(255, 0, 0, 1); /* Яркое свечение */
+  }
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 80px; /* Уменьшенный размер шрифта для мобильных */
+  }
+
+  .flame-text {
+    font-size: 100px; /* Уменьшенный размер шрифта для мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-text {
+    font-size: 60px; /* Дальнейшее уменьшение для маленьких экранов */
+  }
+
+  .flame-text {
+    font-size: 80px; /* Дальнейшее уменьшение для маленьких экранов */
   }
 }
